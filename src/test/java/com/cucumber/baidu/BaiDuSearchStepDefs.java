@@ -17,16 +17,16 @@ import java.util.concurrent.TimeUnit;
 public class BaiDuSearchStepDefs {
     private WebDriver driver;
 
-    @Given("^Go to baidu home$")
-    public void goToBaiDuHome() throws Exception{
+    @Given("^Go to BaiDu home$")
+    public void goToBaiDuHome() {
         System.setProperty("webdriver.chrome.driver","E:\\work\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get("http://www.baidu.com/");
+        driver.get("http://www.BaiDu.com/");
     }
 
-    @When("^I find baidu logo")
+    @When("^I find BaiDu logo")
     public WebElement iFindBaiDuLogo(){
         WebDriverWait wait = new WebDriverWait(driver,10);
         return wait.until(ExpectedConditions.visibilityOf(
@@ -45,7 +45,7 @@ public class BaiDuSearchStepDefs {
         driver.findElement(By.id("su")).click();
     }
 
-    @Then("^Wait the baidu query result \"([^\"]*)\"$")
+    @Then("^Wait the BaiDu query result \"([^\"]*)\"$")
     public void waitTheQueryResult(String result) throws InterruptedException {
         Thread.sleep(10000);
         Assert.assertEquals(result,driver.getTitle());

@@ -50,7 +50,7 @@ public class JDSearchStepDefs {
 
     @And("^Click the first good$")
     public void clickTheFirstGood() {
-        WebElement element =driver.findElement(By.xpath("//a[@href='//item.jd.com/10058164.html']"));
+        WebElement element =driver.findElement(By.cssSelector("div#J_goodsList>ul>li>div>div>a"));
 //        element.click();
         driver.get(element.getAttribute("href"));
     }
@@ -85,7 +85,8 @@ public class JDSearchStepDefs {
     public void waitTheQueryResult() throws InterruptedException {
         Thread.sleep(3000);
         Assert.assertTrue(driver.findElement(By.id("loginDialogBody")).isDisplayed());
-        WebElement img = driver.findElement(By.cssSelector("a.J_zyyhq_10058164>img"));
+        WebElement img = driver.findElement(By.cssSelector("div.item-form>div.cell.p-goods>div.goods-item>" +
+                "div.p-img>a>img"));
         String ImgUrl = img.getAttribute("src");
         System.out.println(ImgUrl);
         driver.close();

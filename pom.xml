@@ -7,6 +7,12 @@
     <groupId>myTest</groupId>
     <artifactId>cucumber</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!--配置编译版本和编码格式-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -19,6 +25,7 @@
             <artifactId>cucumber-java</artifactId>
             <version>1.2.3</version>
         </dependency>
+        <!--单元测试-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -29,6 +36,7 @@
             <artifactId>cucumber-junit</artifactId>
             <version>1.2.3</version>
         </dependency>
+        <!--selenium-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
